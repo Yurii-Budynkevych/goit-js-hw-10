@@ -11,10 +11,28 @@ body {
   color: #212121;
   line-height: 1.5;
 }
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
 
 #search-box {
   font: inherit;
   padding: 8px;
   max-width: 320px;
   margin-bottom: 16px;
+}
+
+.mini-flag {
+  width: 30px;
+  height: 20px;
+  margin-right: 5px;
+}
+.maxi-flag {
+    width: 60px;
+      height: 40px;
+      margin-right: 10px;
 }
