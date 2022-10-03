@@ -16,13 +16,15 @@ const refs = {
 refs.input.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
 function onInput(e) {
   removeInnerHtml();
-  let serchQuery = e.target.value;
+  let serchQuery = e.target.value.trim();
+  if (serchQuery === '') {
+    return;
+  }
   fetchCountries(serchQuery)
     .then(data => {
-      console.log(data);
       if (data.length > 10) {
         Notiflix.Notify.info(MSG);
-      } else if (data.length < 10 && data.length >= 2) {
+      } else if (data.length <= 10 && data.length >= 2) {
         createList(data);
       } else if (data.length === 1) {
         createCard(data);
