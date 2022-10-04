@@ -4,7 +4,7 @@ const SETTINGS = '?fields=name,capital,population,flags,languages';
 export const fetchCountries = function (name) {
   return fetch(`${BASE_URL}/name/${name}${SETTINGS}`).then(response => {
     if (!response.ok) {
-      throw new Error('mistake');
+      throw new Error(response.statusText);
     }
     return response.json();
   });
